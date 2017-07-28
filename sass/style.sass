@@ -1,0 +1,1321 @@
+$bg: #000000
+$ff1: 'Yantramanav', sans-serif
+$ff2: 'Yantramanav', sans-serif
+$ffTitle: 'Arapey', serif
+$white: rgba(255, 255, 255, 1)
+$red: red
+$pink: #fbe2ff
+$yellow: rgba(100,220,130,0.9)
+$background: #fff7ce
+$grey: #3a3a3a
+$lightPink:  #f9eff0
+$break-med: 992px
+
+$copper: rgba(226, 190, 193, 0.7)
+$copperSolid: rgba(226, 190, 193, 0.9)
+$green: rgba(142, 191, 153, 0.73)
+
+
+=margin-padding($marpad)
+  margin: $marpad
+  padding: $marpad
+
+#wpadminbar
+  display: none !important
+html
+  width: 100vw
+  height: 100vh
+// img
+//   filter: grayscale(100%)
+body
+  background: $white
+  text-align: center
+  font-family: $ff1
+  +margin-padding(0)
+  color: $grey
+  font-weight: 100
+h1
+  font-weight: 300
+  text-transform: uppercase
+  letter-spacing: 3px
+.opaque
+  background-color: $copper
+  transition: 0.5s ease-in
+.hide
+  display: none
+.nav-bar
+  width: 100vw
+  height: 3.7em
+  background-color: #fff
+  position: fixed
+  z-index: 999
+  top: 0
+  .slogan
+    position: absolute
+    right: 2em
+    bottom: 0.8em
+    font-family: $ff2
+    font-size: 1.25em
+  .menu-nav
+    padding-right: 20px
+    ul
+      display: inline-flex
+      float: right
+      list-style-type: none
+      li
+        margin: 5px
+        a
+          color: black
+          text-decoration: none
+    .menu-social
+      float: right
+      margin: 1em
+      i
+        margin: 5px
+        font-size: 1.4em
+  .menu
+    position: relative
+    z-index: 99
+    .menu-box
+      font-family: $ffTitle
+      width: 20em
+      height: 5em
+      margin-left: 2em
+      position: absolute
+      top: 0.1em
+      left: 1em
+      p
+        position: absolute
+        font-family: $ff1
+        top: 25px
+        font-weight: 700
+        left: 22px
+        font-size: 12px
+        letter-spacing: 1.3px
+      .menu-box-inner
+        border-top: none
+        width: 100%
+        height: 10.25em
+        position: absolute
+        bottom: 0
+        left: -5px
+      .alice
+        font-size: 2em
+        position: absolute
+        color: $grey
+        left: 2px
+        text-transform: uppercase
+        margin-top: 5px
+        letter-spacing: 2px
+      .benham
+        font-size: 2em
+        position: absolute
+        color: $grey
+        right: 95px
+        text-transform: uppercase
+        margin-top: 5px
+        letter-spacing: 2px
+      .menu-box-opaque
+        width: 73%
+        height: 60%
+        margin-left: 1em
+        margin-top: 1.6em
+        position: relative
+        z-index: -1
+
+.homepage-body
+  width: 100vw
+  height: 100vh
+  overflow: hidden
+  .arrow
+    font-size: 7em
+    height: 100px
+    position: absolute
+    top: calc(50vh - 50px)
+    z-index: 100
+    color: $copper
+    -webkit-text-stroke: 2px $copper
+  .arrow-left
+    left: 0
+  .arrow-right
+    right: 0
+  .upper-image
+    width: 100%
+    height: 100%
+    object-fit: cover
+  .background
+    width: 100%
+    height: 35%
+    object-fit: cover
+    filter: grayscale(80%)
+  .home-content
+    width: 100%
+    height: calc(100% - 5em)
+    position: absolute
+    top: 5em
+    left: 0
+    z-index: 99
+    .home-display-box
+      width: 40em
+      height: 12em
+      background-color: $grey
+      position: absolute
+      bottom: 4.5em
+      right: 4.5em
+      .home-content-title
+        font-size: 10em
+        font-family: $ffTitle
+        color: white
+        position: absolute
+        left: -0.4em
+        text-align: left
+        top: -0.4em
+        text-transform: uppercase
+        font-weight: 300
+        letter-spacing: 4.5px
+      .home-content-description
+        text-align: right
+        font-size: 1.8em
+        font-family: $ff1
+        color: white
+        max-width: 80%
+        position: absolute
+        right: 0.8em
+        bottom: 0.6em
+      .home-display-box-opaque
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 2em
+        left: 2em
+        background-color: $copper
+        z-index: -1
+.section1
+  width: 100vw
+  background-color: rgb(249, 239, 240)
+  padding-bottom: 290px
+  display: block
+  .about-text-div
+    width: 100%
+    padding: 10px
+    text-align: center
+    margin: 0 auto
+    background-color: white
+    h1
+      position: relative
+      display: inline-block
+      font-family: $ffTitle
+      border-bottom: 5px solid $copper
+      padding-bottom: 10px
+      margin-bottom: 0
+  .section1-inner
+    width: 100vw
+    background-color: $white
+    display: inline-flex
+    .left-image
+      height: 30em
+      width: 50%
+      margin-left: 1.5%
+      background-color: $white
+      position: relative
+      z-index: 10
+      img
+        margin-top: 2em
+        margin-left: 5em
+        width: 100%
+        height: 100%
+        object-fit: cover
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+        // filter: grayscale(100%)
+    .right-text
+      height: 31.5em
+      width: 40%
+      padding-right: 5%
+      background-color: $white
+      position: relative
+      .about-logo-row
+        margin-top: 50px
+        width: 100%
+        text-align: right
+        display: inline-block
+        padding-right: 20px
+        .alice
+          width: 140px
+          display: inline-block
+          vertical-align: -30px
+          margin: 0
+          margin-left: -20px
+        .hello
+          width: 140px
+          display: inline-block
+          vertical-align: -30px
+          margin: 0
+          margin-right: 10px
+        .paragraph-1
+          width: 320px
+          font-size: 2.6em
+          font-family: $ffTitle
+          display: inline-block
+      .border
+        position: absolute
+        top: 60px
+        right: 50px
+        width: 100%
+        height: 100%
+        border: 2.5px solid $grey
+      .paragraph
+        position: relative
+        text-align: right
+        right: 25px
+        span
+          background-color: $grey
+          color: white
+          padding: 2px 5px 2px 7.5px
+      .paragraph-2
+        font-size: 1.2em
+        padding-left: calc(100% - 320px)
+        margin-top: 15px
+        float: right
+      .about-subtitle
+        text-align: right
+        margin: -30px 20px 0
+        font-size: 1.5em
+        font-weight: 300
+        letter-spacing: 1.3px
+      .initials-img
+        width: 49px
+        position: absolute
+        right: 86px
+        bottom: 90px
+      .about-me
+        font-size: 3.5em
+        font-family: $ffTitle
+        border-bottom: 7px solid $grey
+        background-color: $white
+        color: $grey
+        padding: 5px 12.5px
+        position: absolute
+        top: -0.75em
+        left: -3em
+        z-index: 20
+        transform: rotate(-90deg)
+        transform-origin: bottom right
+        box-shadow: 0 -10px 13px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+        letter-spacing: 7px
+.section2
+  width: 100vw
+  background-color: rgb(190, 190, 190)
+  padding-bottom: 150px
+  padding-top: 80px
+  .section2-content
+    width: 80%
+    height: 100%
+    margin: -202.5px 10% 0 10%
+    background-color: $white
+    position: relative
+    z-index: 20
+    text-align: left
+    display: flex
+    flex-flow: row wrap
+    align-items: stretch
+    .services-text-div
+      width: calc(100% - 50px)
+      padding: 10px
+      text-align: center
+      max-width: 800px
+      margin: 0 auto
+      h1
+        position: relative
+        display: inline-block
+        font-family: $ffTitle
+        border-bottom: 5px solid $copper
+        padding-bottom: 10px
+        margin-bottom: 0
+    .circle-outer
+      width: calc(100% - 100px)
+      padding:  10px 50px 50px 50px
+      text-align: center
+      .circle
+        width: 200px
+        height: 200px
+        // border-radius: 50%
+        display: inline-flex
+        margin: 1em 2em 2em 2em
+        position: relative
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+        background-color: $grey
+        a
+          color: $grey
+          text-decoration: none
+        img
+          position: absolute
+          top: 10px
+          left: 10px
+          width: 100%
+          height: 100%
+          object-fit: cover
+          // border: 5px solid $white
+          // border-radius: 50%
+        h2
+          font-size: 2.2em
+          font-family: $ffTitle
+          background-color: $copper
+          color: $grey
+          height: 40px
+          padding: 5px 15px 10px 5px
+          font-weight: 100
+          margin-left: -20px
+          position: relative
+          z-index: 10
+    .section2-content-border
+      position: absolute
+      z-index: -1
+      top: 2em
+      left: 2em
+      width: 100%
+      height: 100%
+      border: 5px solid $white
+.section3
+  width: 100vw
+  display: inline-flex
+  position: relative
+  background-image: url("img/banner5.jpg")
+  background-size: cover
+  .inner-banner
+    width: 40%
+    position: relative
+    background-color: rgba(255,255,255,0.9)
+    left: calc(30% - 30px)
+    padding: 30px
+    text-align: center
+    display: inline-block
+    margin: 40px 0
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+    h1
+      font-family: $ffTitle
+      margin: 0 5px
+    h5
+      margin-top: 5px
+      margin-bottom: 0px
+      font-family: $ff1
+      font-size: 1.15em
+      font-weight: 300
+    .dash
+      display: block
+      margin: 0 0 20px
+      font-size: 2em
+      color: $copper
+    .input-field
+      height: 40px
+      width: 250px
+      font-size: 2em
+      font-weight: 300
+      margin: 0 5px 5px 5px
+    label
+      font-family: $ff2
+      font-size: 2em
+      font-weight: 100
+      margin-right: 5px
+    .submit-button
+      display: block
+      margin: 0 auto
+      width: 100px
+      height: 40px
+      background: -webkit-linear-gradient(top left, #e7bbac, #ecd6d3)
+      background: -o-linear-gradient(top left, #e7bbac, #ecd6d3)
+      background: linear-gradient(to bottom right, #e7bbac, #ecd6d3)
+      color: $grey
+      border: none
+      border-radius: 5px
+      font-family: $ff1
+      font-size: 1em
+      transition: 0.1s ease-in
+      &:hover
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+      &:focus
+        outline: 0
+    h6
+      margin: 5px 5px 0
+    img
+      width: 100%
+      object-fit: cover
+.mc4wp-success
+  font-size: 1.1em
+  font-weight: 700
+  color: $grey
+  background-color: $copper
+  padding: 20px
+  span
+    display: block
+    font-size: 2em
+    margin: -22px 0 6px
+    font-family: $ffTitle
+    font-weight: 300
+  .email-icon
+    vertical-align: -0.5px
+    color: $copper
+.blog-div-title
+  width: 100%
+  text-align: center
+  padding-top: 40px
+  h1
+    font-family: $ffTitle
+    color: $grey
+    text-transform: uppercase
+    letter-spacing: 5px
+    border-bottom: 2px solid $copper
+    padding-bottom: 1px
+    font-weight: 300
+    display: inline-block
+.section4
+  width: 100vw
+  background-color: white
+  display: inline-flex
+  padding-bottom: 150px
+  .section4-inner
+    width: 100%
+    height: 100%
+    max-width: 1500px
+    margin: 0 auto
+    display: inline-flex
+    .blog-post
+      width: 33.3333%
+      height: 100%
+      .inner-blog
+        background-color: white
+        width: 60%
+        height: 350px
+        margin-left: 15%
+        margin-top: 10%
+        position: relative
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+        img
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
+          object-fit: cover
+        .blog-title-box
+          width: 200px
+          background-color: rgba(255, 255, 255, 0.76)
+          position: absolute
+          z-index: 99
+          top: 10px
+          right: 10px
+          h3
+            text-align: right
+            margin: 10px 10px 0px
+            float: right
+            font-family: $ff2
+            display: block
+            width: calc(100% - 20px)
+            color: $grey
+          h6
+            margin: 0 10px 10px
+            float: right
+            text-align: right
+            font-family: $ff2
+            display: block
+            width: calc(100% - 20px)
+          i
+            display: block
+            width: 100%
+            float: right
+            font-size: 1.5em
+            text-align: right
+            margin: -5px 10px 10px 10px
+
+        .blog-border
+          width: 100%
+          height: 100%
+          border: 5px solid
+          position: absolute
+          top: 1em
+          left: 1em
+.section5
+  width: 100vw
+  .feed
+    width: 100vw
+    overflow: hidden
+    display: inline-flex
+    .photo
+      width: 20%
+      height: 200px
+      overflow: hidden
+      img
+        height: 100%
+        width: 100%
+        object-fit: cover
+.testimonial-div-title
+  text-align: center
+  font-family: $ffTitle
+  background-color: $lightPink
+  padding-top: 30px
+  h1
+    margin: 0
+.section6
+  width: calc(100vw - 200px)
+  background-color: $lightPink
+  padding: 10px 100px 50px
+  display: inline-flex
+  .testimonial
+    width: calc(33.333% - 50px)
+    height: 200px
+    margin: 25px
+    background-color: white
+    position: relative
+    .icon-outer
+      width: 90%
+      display: block
+      margin-left: 5%
+      height: 51px
+      border-bottom: solid $copper 2px
+      margin-bottom: 10px
+    i
+      float: right
+      display: block
+      font-size: 2em
+      color: $copper
+      margin: 10px 15px
+    .testimonial-text
+      margin: 0
+      padding: 0 30px
+      font-size: 18px
+    .testimonial-name
+      position: absolute
+      bottom: 0px
+      right: 20px
+      font-family: $ffTitle
+      font-style: italic
+    img
+      height: 30px
+      position: absolute
+      top: 14px
+      left: 20px
+      opacity: 0.8
+.footer
+  width: 100vw
+  text-align: center
+  padding: 70px 0
+  border-top: 10px solid $copper
+  border-bottom: 10px solid $copper
+  h1
+    font-family: $ffTitle
+    font-weight: 100
+    border-bottom: 2px solid $copper
+    display: inline-block
+    padding: 0 10px 5px
+    margin: 0
+  h4
+    margin: 10px 0 0 0
+    font-weight: 300
+
+  ul
+    list-style: none
+    padding: 0
+    li
+      display: inline-block
+      margin: 0px 30px
+      font-family: $ff2
+      a
+        color: black
+        text-decoration: none
+  .footer-social
+    i
+      font-size: 2em
+      color: $copper
+      margin: 5px 20px 20px
+  .copyright
+    h5
+      font-weight: 100
+      margin: 10px 0 0 0
+  .credit
+    h3
+      margin: 0
+      font-weight: 100
+    span
+      font-size: 0.7em
+// Services Page
+
+#services
+  margin-top: 60px
+  .services-intro
+    text-align: center
+    .services-writing
+      width: 250px
+    .services-alice
+      border-bottom: 5px solid $copper
+      padding-bottom: 10px
+      margin-bottom: 20px
+    h3
+      font-size: 20px
+      max-width: 500px
+      margin: 0 auto 50px
+      text-align: center
+      letter-spacing: 2.5px
+  .services-content
+    max-width: 1200px
+    margin: 0 auto 100px
+    display: flex
+    flex-wrap: wrap
+    h4
+      width: 100%
+      font-size: 2em
+      font-family: $ffTitle
+      font-weight: 300
+      margin-bottom: 20px
+    .services-block
+      width: 33.3333%
+      background-color: #ebebeb
+      h3
+        border-bottom: 2.5px solid $copper
+        display: inline-block
+        padding-bottom: 3px
+        margin: 30px auto
+      button
+  .services-cta-background
+    width: 100vw
+    padding: 25px 0
+    margin-left: 30px 0
+    background-image: url('img/banner5.jpg')
+    background-size: cover
+    .services-cta
+      width: 100%
+      max-width: 1100px
+      margin: 50px auto
+      display: flex
+      flex-wrap: wrap
+      .services-contact
+        width: calc(50% - 30px)
+        padding: 15px
+        background-color: $copperSolid
+        margin: 0 auto
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-wrap: wrap
+        button
+          background-color: $grey
+          color: white
+        h2
+          color: $grey
+          font-family: $ffTitle
+          font-weight: 300
+          margin-top: 10px
+          border-bottom: 2.5px solid $grey
+          padding-bottom: 2.5px
+        h3
+          margin: 0 auto 20px
+          padding: 10px
+        span
+          font-size: 1.5em
+          font-family: $ffTitle
+          margin: 0 5px
+        .services-contact-cta
+          margin-top: 30px
+          font-size: 1em
+      .services-signup
+        width: calc(50% - 30px)
+        padding: 15px
+        background-color: $grey
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-wrap: wrap
+        h3
+          margin: 0 auto 20px
+          color: white
+          padding: 10px
+        h2
+          color: white
+          font-family: $ffTitle
+          font-weight: 300
+          margin-top: 10px
+          border-bottom: 2.5px solid $copper
+          padding-bottom: 2.5px
+  // About page
+#blocks
+  display: flex
+  flex-wrap: wrap
+  width: 100vw
+  min-height: 100vh
+#about-page
+  display: flex
+  width: 100vw
+  flex-wrap: wrap
+  .about-image
+    width: 50vw
+    height: 50vw
+    @media screen and (max-width: $break-med)
+      width: 100%
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+      float: right
+  .about-content
+    width: 50%
+    margin: auto
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: center
+    .about-content-inner
+      width: 300px
+      .about-writing
+        width: 250px
+      .about-alice
+        border-bottom: 10px solid $copper
+        padding-bottom: 15px
+      @media screen and (max-width: $break-med)
+        width: 100%
+        margin: auto
+
+  .about-block
+    width: calc(33.3333vw - 10px)
+    height: calc(33.3333vw - 10px)
+    background-color: $copper
+    border: 5px solid #fff
+    display: none
+    flex-wrap: wrap
+    align-items: center
+    justify-content: center
+    position: relative
+    animation-duration: 0.5s
+    &:nth-child(even)
+      animation-delay: 0.2s
+      animation-duration: 0.4s
+    .about-block-list
+      h3
+        font-size: 1.8vw
+        margin-bottom: 10px
+        padding-bottom: 5px
+        width: 100%
+        font-family: $ffTitle
+        border-bottom: 3px solid $grey
+      ul
+        columns: 2
+        padding: 0
+        margin-top: 20px
+        margin-left: -10px
+        li
+          list-style: decimal inside
+          font-size: 1.5em
+          margin: 20px
+          &:nth-child(1)
+            margin: 0 20px 20px 20px
+    #about-block-signup-div
+      h2
+        font-family: $ffTitle
+        font-size: 2em
+        border-bottom: 3px solid $grey
+        padding-bottom: 5px
+        display: inline-block
+        margin-bottom: 0
+      p
+        font-weight: 700
+        font-size: 1.3em
+        width: 300px
+      button
+        display: block
+        margin: 0 auto
+        width: 100px
+        height: 40px
+        background-color: white
+        border: none
+        border-radius: 5px
+        font-family: $ffTitle
+        font-size: 1em
+        transition: 0.1s ease-in
+        &:hover
+          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+        &:focus
+          outline: 0
+    .about-block-alice
+      width: 70%
+    .about-border
+      width: 100%
+      height: 100%
+      position: absolute
+      right: -30px
+      top: 20px
+      border: 4px solid #ebebeb
+      z-index: 99
+    .border-2
+      right: auto
+      left: -30px
+      border-color: white
+    .border-3
+      top: -30px
+      border-color: $copper
+    .about-photo
+      width: 100%
+      height: 100%
+      object-fit: cover
+    .about-block-title
+      width: 100%
+      p
+        font-size: 2em
+        margin: 10px 0 0 0
+        font-family: $ff1
+        font-weight: 700
+        opacity: 0.7
+        border-bottom: 2.5px solid
+        padding-bottom: 5px
+        display: inline-block
+        margin-left: 30px
+    .about-icon-div
+      width: 50%
+      h2
+        opacity: 0.7
+        font-weight: 700
+        margin: 0
+        font-size: 3em
+      .about-icon
+        width: 50%
+        opacity: 0.7
+    h1
+      font-family: $ffTitle
+      font-size: 3vw
+      font-weight: 300
+      margin-bottom: 0
+      margin-top: 30px
+      border-bottom: 2.5px solid
+      padding-bottom: 5px
+    .about-block-text
+      padding: 0 10% 10%
+      margin: -50px 0 0 0
+      font-size: 1.25vw
+      font-weight: 700
+  .ab2
+    background-color: #ebebeb
+  .ab3
+    background-color: rgba(245, 225, 207, 0.81)
+
+// Blog page
+
+.sidebar
+  width: 250px
+  margin: 25px
+  display: inline-block
+  background-color: white
+  color: white
+  padding: 20px 10px
+  @media screen and (max-width: $break-med)
+    display: none
+  .sidebar-logo
+    width: 35%
+    // filter: invert(1)
+    position: relative
+    z-index: 10
+  .sidebar-portrait
+    width: 80%
+  #sidebar-signup-div
+    text-align: center
+    h2
+      font-family: $ffTitle
+      color: $grey
+      font-weight: 300
+      border-bottom: 2px solid $grey
+      padding-bottom: 2.5px
+      display: inline-block
+    button
+      display: block
+      margin: 0 auto
+      width: 100px
+      height: 40px
+      background: -webkit-linear-gradient(top left, #e7bbac, #ecd6d3)
+      background: -o-linear-gradient(top left, #e7bbac, #ecd6d3)
+      background: linear-gradient(to bottom right, #e7bbac, #ecd6d3)
+      border: none
+      border-radius: 5px
+      font-family: $ffTitle
+      font-size: 1em
+      transition: 0.1s ease-in
+      &:hover
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+      &:focus
+        outline: 0
+    p
+      color: $grey
+  h1
+    font-family: $ffTitle
+    font-size: 2em
+    font-weight: 300
+    color: $grey
+    margin: 0 auto 5px
+  li
+    list-style: none
+  .widgettitle
+    color: $grey
+    font-family: $ffTitle
+    font-weight: 300
+    font-size: 2em
+    border-bottom: 2px solid $grey
+    display: inline-block
+    margin-bottom: 0
+  ul
+    list-style: none
+    padding: 0
+    li
+      margin: 15px 10px
+      text-align: center
+    li a
+      color: $grey
+      font-size: 1em
+      text-decoration: none
+      font-family: $ff1
+      font-weight: 600
+  p
+    color: $grey
+    padding: 0px 30px 10px
+    margin-top: 5px
+    font-weight: 700
+    letter-spacing: 2.5px
+    font-size: 0.9em
+
+
+
+.blog-template-container
+  width: 100vw
+  display: inline-flex
+  .blog-container
+    width: calc(100% - 300px)
+    display: inline-flex
+    flex-wrap: wrap
+    flex-grow: 1
+    max-width: 1200px
+    margin: 0 auto
+    padding-top: 30px
+    @media screen and (max-width: $break-med)
+      width: 100%
+    .post-outer
+      width: 370px
+      margin: 30px calc(25% - 185px)
+      background-color: white
+      li
+        list-style: none
+        background-color: white
+        padding: 7.5px 15px 15px 15px
+        width: 75%
+        margin-top: -45px
+        margin-left: 0px
+        position: relative
+        text-align: left
+        z-index: 10
+        a
+          color: $grey
+          font-family: $ffTitle
+          text-decoration: none
+          font-size: 1.5em
+          border-bottom: 2px solid $grey
+          padding-bottom: 2.5px
+          line-height: 40px
+      .blog-image
+        width: 100%
+        height: 350px
+        margin: 0 auto
+        position: relative
+        .blog-date
+          position: absolute
+          top: 15px
+          right: 15px
+          z-index: 20
+          background-color: white
+          padding: 5px 10px
+          margin: 0
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+      .blog-under
+        padding: 10px
+        background: url('img/sky1.jpg')
+        background-size: cover
+        filter: grayscale(40%)
+    .blog-text
+      background-color: rgba(43, 43, 43, 0.87)
+      color: #e0e0e0
+      padding: 10px
+      width: 84%
+      margin: -20px -20px auto auto
+      text-align: left
+      position: relative
+      z-index: 99
+    .blog-link-div
+      text-align: right
+      margin-top: 5px
+      a
+        color: black
+        text-decoration: none
+        font-weight: 700
+        margin-right: 5px
+    .post-divide
+      text-align: center
+
+// Single post
+.top-banner
+  background-color: rgb(231, 175, 156)
+  width: 100%
+  height: 140px
+  display: block
+  background-image: url('img/sky1.jpg')
+  background-size: cover
+  position: relative
+  filter: grayscale(40%)
+  h1
+    position: absolute
+    margin-left: -200px
+    bottom: 20px
+    width: 400px
+    font-family: $ffTitle
+    color: $grey
+    border-bottom: 2px solid
+    display: inline-block
+.content-area
+  width: 100vw
+  display: inline-flex
+  #post-content
+    margin-top: 60px
+    width: calc(100% - 300px)
+    padding-bottom: 30px
+    @media screen and (max-width: $break-med)
+      width: 100%
+    .post-title-div
+      text-align: center
+      position: relative
+      .title-block
+        display: inline-block
+        background-color: $copper
+        max-width: 60%
+        position: relative
+        padding-bottom: 20px
+        @media screen and (max-width: $break-med)
+          max-width: 70%
+        .post-title
+          font-size: 3em
+          padding: 10px 20px
+          font-family: $ffTitle
+          font-weight: 300
+          margin: 5px 0 0 0
+        h4
+          padding: 10px 15px
+          position: absolute
+          bottom: -45px
+          right: -15px
+          background-color: #ffffff
+          display: inline-block
+    .post-thumbnail
+      width: 70%
+      margin: 0 auto
+      height: auto
+      margin-top: -30px
+      @media screen and (max-width: $break-med)
+        width: 80%
+      img
+        width: 100%
+        height: auto
+    .post-content-text
+      width: 80%
+      margin: 0 auto
+      background-color: #fff
+      font-weight: 700
+      @media screen and (max-width: $break-med)
+        width: 80%
+        font-size: 18px
+// Comments
+
+#comments
+  .comment-list
+    list-style: none
+    padding: 0
+    .comment
+      padding: 20px
+      .reply
+        margin-bottom: 20px
+        text-align: left
+        font-size: 12px
+        padding-left: 2.5px
+        a
+          color: black
+          text-decoration: none
+          background-color: $copper
+          border-radius: 5px
+          padding: 5px
+      .comment-body
+        .comment-author
+          text-align: left
+          display: flex
+          align-items: flex-start
+          justify-content: left
+          img
+            margin: 5px
+          .fn
+            margin: 5px
+          .says
+            margin: 5px
+        .comment-meta
+          text-align: left
+          font-size: 12px
+          margin-left: 57px
+          margin-top: -22px
+          a
+            color: $grey
+            text-decoration: none
+        p
+          text-align: left
+          font-weight: 700
+          color: $grey
+          margin-left: 5px
+      .depth-2
+        background-color: rgba(242, 242, 242, 0.77)
+      &:nth-child(even)
+        background-color: $copper
+        .depth-2
+          background-color: $copper
+          margin: 20px 0 10px
+        .depth-3
+          background-color: $copper
+          margin: 20px 0 10px
+      .children
+        list-style: none
+#respond
+  #reply-title
+    font-family: $ffTitle
+    font-weight: 300
+    font-size: 1.7em
+  .comment-form
+    .logged-in-as
+      a
+        color: $grey
+        text-decoration: none
+        padding: 5px
+        &:nth-child(even)
+          color: white
+          background-color: $grey
+          padding: 5px
+          border-radius: 5px
+          font-family: $ff1
+          font-weight: 500
+          transition: 0.1s ease-in
+          &:hover
+            background-color: #717171
+            color: #2b2b2b
+    .form-submit
+      input
+        color: white
+        background-color: $grey
+        padding: 5px
+        border-radius: 5px
+        border: none
+        font-family: $ff1
+        font-weight: 500
+        font-size: 1em
+        transition: 0.1s ease-in
+        &:hover
+          background-color: #717171
+          color: #2b2b2b
+        &:focus
+          outline: 0
+
+.comment-form-comment
+  display: flex
+  align-items: center
+  justify-content: center
+  label
+    font-family: $ffTitle
+    font-size: 1.3em
+    padding: 10px
+#comment
+  width: 30%
+  border: 3px solid #ebebeb
+  resize: none
+  &:focus
+    outline: 0
+
+// POPUP
+
+#popup
+  display: none
+  width: 40%
+  left: 30%
+  top: 10vh
+  position: fixed
+  background-image: url('img/sky1-o.png')
+  background-size: cover
+  border: 25px solid $copper
+  z-index: 1000
+  .inner-banner
+    width: 100%
+    padding: 50px
+    left: -50px
+    background-color: white
+    position: relative
+    margin: 40px 0
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)
+    h1
+      font-family: $ffTitle
+      margin: 0 5px
+    h5
+      margin-top: 5px
+      margin-bottom: 0px
+      font-family: $ff1
+      font-size: 1.15em
+      font-weight: 300
+    .dash
+      display: block
+      margin: 0 0 20px
+      font-size: 2em
+      color: $copper
+    .input-field
+      height: 40px
+      width: 250px
+      font-size: 1.4em
+      font-weight: 300
+      margin: 0 5px 5px 5px
+    label
+      font-family: $ff2
+      font-size: 1.2em
+      font-weight: 100
+      margin-right: 5px
+      vertical-align: 3px
+    .submit-button
+      display: block
+      margin: 0 auto
+      width: 100px
+      height: 40px
+      background: -webkit-linear-gradient(top left, #e7bbac, #ecd6d3)
+      background: -o-linear-gradient(top left, #e7bbac, #ecd6d3)
+      background: linear-gradient(to bottom right, #e7bbac, #ecd6d3)
+      color: $grey
+      border: none
+      border-radius: 5px
+      font-family: $ff1
+      font-size: 1em
+      transition: 0.1s ease-in
+      &:hover
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+      &:focus
+        outline: 0
+    .close-button
+      font-size: 1.5em
+      position: absolute
+      top: 5px
+      right: 10px
+.button
+  display: block
+  margin: 0 auto
+  width: 100px
+  height: 40px
+  background: $copper
+  color: $grey
+  border: none
+  border-radius: 5px
+  font-family: $ffTitle
+  font-size: 1.3em
+  transition: 0.1s ease-in
+  &:hover
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+  &:focus
+    outline: 0
