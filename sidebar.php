@@ -18,8 +18,8 @@
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</aside><!-- .sidebar .widget-area -->
 	<div id="sidebar-signup-div">
-		<h2>Want more?</h2>
-		<p>fancy receiving FREE resources and valuable content delivered straight to your inbox?</p>
+		<h2>Don’t miss out!</h2>
+		<p>Add your email below to receive the blog straight into your inbox!</p>
 		<button id="sidebar-signup">Yes Please!</button>
 	</div>
 <?php endif; ?>

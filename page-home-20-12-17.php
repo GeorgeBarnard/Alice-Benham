@@ -11,17 +11,11 @@
   <!-- <i class="material-icons arrow arrow-left">keyboard_arrow_left</i>
   <i class="material-icons arrow arrow-right">keyboard_arrow_right</i> -->
   <img class="upper-image" src="<?php the_field('fullscreen_image'); ?>" alt="">
-  <img class="upper-image-small" src="<?php the_field('fullscreen_image_small'); ?>" alt="">
 
   <div class="home-content">
     <div class="home-display-box">
-      <span class="home-content-title home-title1">New Course!</span>
-      <span class='home-content-title home-title2'>The Fundamentals</span>
-      <div class='home-content-inner-grey'>
-        <span class='home-inner-quote'><span class='home-quotes'>"</span> Grow your business through the power of Digital Marketing<span class='home-quotes'>"</span></span>
-        <div class='home-inner-subheading'><span >Blogging, Social Media, Mailing Lists, Web Design and more!</span></div>
-      </div>
-      <a class='home-content-anchor' href='/courses'><div class='home-content-button'>Tell Me More!</div></a>
+      <span class="home-content-title title1">'Story'</span>
+      <span class="home-content-description description1">Tell the story of your business</span>
       <div class="home-display-box-opaque opaque"></div>
     </div>
   </div>
@@ -33,7 +27,7 @@
   </div>
 <div class='section1-inner'>
 <div class="left-image">
-<img src="<?php the_field('intro_image'); ?>" alt="">
+<img src="<?php bloginfo('template_url') ?>/img/alice-profile.jpg" alt="">
 </div>
 <div class="right-text">
   <div class="border"></div>
@@ -148,11 +142,11 @@ $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
     </div>
 </div>
 
-<div style="background-image: url( <?php the_field('signup_image'); ?> )" class="section3">
+<div class="section3">
   <div class="inner-banner">
-    <h1><?php the_field('signup_title'); ?></h1>
+    <h1>Oh, you want more?</h1>
     <h5>
-    <?php the_field('signup_text'); ?>
+    Want to receive valuable knowledge about social media blogging and all things digital? Start growing your business today and sign up to my mailing list!
     </h5>
     <!-- <i class="fa fa-window-minimize dash" aria-hidden="true"></i>
     <label for="Name">Name</label>

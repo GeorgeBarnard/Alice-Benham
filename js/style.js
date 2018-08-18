@@ -6,6 +6,9 @@
      $('.arrow-right').click();
   }, 15000);
 
+$('.menu-box-inner').click(function(){
+  window.location = '/';
+});
 
 $('.arrow-right').click(function() {
 
@@ -59,8 +62,8 @@ function pageTriggers(){
 
 
 var Spectra = {
-  instaToken: '3174735.93c9576.27412920582742dfb6d62cacc36e2325',
-  instaID: '93c9576abc2245948b068fc08f8654e0',
+  instaToken: '3174735.edbbd53.573c6fca3f994b318f58c328058aea11',
+  instaID: 'edbbd537f0eb4778a61d61bef1ee272d',
 
   init: function () {
     $.fn.spectragram.accessData = {
@@ -94,7 +97,7 @@ Spectra.init();
  });
 
  function timeOut() {
-     var t = setTimeout("showPopup();", 30000);
+     var t = setTimeout("showPopup();", 3000000);
  }
 
  function showPopup() {
@@ -112,34 +115,34 @@ Spectra.init();
     $('#popup').show();
  });
 
+var menu = false;
 
 
-
- var waypoint = new Waypoint({
-  element: document.getElementById('blocks'),
-  handler: function(direction) {
-    console.log('Scrolled to waypoint!')
-    $('.firstRow').css('display','flex')
-  },
-  offset: '70%'
+$('.small-bars').click(function(){
+  if(menu == false){
+  $('.mobile-nav-bar').css('margin-top','0px');
+  menu = true;
+  }
+  else if(menu == true){
+    $('.mobile-nav-bar').css('margin-top','-600px');
+    menu = false;
+  }
 })
 
- var waypoint2 = new Waypoint({
-  element: document.getElementById('blocks'),
-  handler: function(direction) {
-    console.log('Scrolled to waypoint!')
-    $('.secondRow').css('display','flex')
-  },
-  offset: '10%'
-})
+console.log('anime')
+var lineDrawing = anime({
+  targets: '#lineDrawing .lines path',
+  strokeDashoffset: [anime.setDashoffset, 0],
+  easing: 'easeInQuad',
+  duration: 2000,
+  delay: function(el, i) { return i * 250 },
+  direction: 'alternate',
+  loop: false
+});
+setTimeout(function() {
+   $('.st0').css('transition','ease-in 0.3s')
+   $('.st0').css('fill','rgba(226, 190, 193, 0.7)')
+}, 2300);
 
- var waypoint3 = new Waypoint({
-  element: document.getElementById('blocks'),
-  handler: function(direction) {
-    console.log('Scrolled to waypoint!')
-    $('.thirdRow').css('display','flex')
-  },
-  offset: '-50%'
-})
 
 console.log('end of js');

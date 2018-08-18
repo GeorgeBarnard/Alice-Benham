@@ -33,7 +33,7 @@ get_header();
 <div class="right-text">
   <div class="border"></div>
   <!-- <span class="about-me">About Me</span> -->
-  <div class="about-logo-row"><p class="paragraph paragraph-1"><span>Hello,</span> I’m</p> <img src="<?php bloginfo('template_url') ?>/img/Alice-logo.png" alt="signature"></div>
+  <div class="about-logo-row"><p class="paragraph paragraph-1"><span>Hello,</span> I’m</p> <img src="<?php bloginfo('template_url') ?>/img/alice-logo.png" alt="signature"></div>
   <p class="about-subtitle">Let me introduce myself!</p>
   <!-- <div class="paragraph line"></div> -->
   <p class="paragraph paragraph-2">

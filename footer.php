@@ -15,13 +15,13 @@
     <li>Contact</li>
   </ul> -->
   <div class="bottomMenu">
-            <?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
+            <!-- <?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?> -->
   </div>
 </div>
 <div class="footer-social">
-  <i class="fa fa-facebook" aria-hidden="true"></i>
-  <i class="fa fa-instagram" aria-hidden="true"></i>
-  <i class="fa fa-twitter" aria-hidden="true"></i>
+  <!-- <a target="_blank" href="https://www.facebook.com/alicebenham.co.uk/"><i class="fa fa-facebook" aria-hidden="true"></i></a> -->
+  <a target="_blank" href="https://www.instagram.com/alice_benham/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+  <!-- <a target="_blank" href="https://twitter.com/alicebenham1998"><i class="fa fa-twitter" aria-hidden="true"></i></a> -->
 </div>
 <div class="copyright">
   <h5>
@@ -33,7 +33,7 @@
   </h5>
 </div>
 <div class="credit">
-  <h3><span>Web design by </span>FoldedGroup</h3>
+  <a target="_blank" href="http://foldedgroup.com"><h3><span>Web design by </span>FoldedGroup</h3></a>
 </div>
 </div>
 

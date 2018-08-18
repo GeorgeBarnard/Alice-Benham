@@ -1,3 +1,5 @@
+
+
 $bg: #000000
 $ff1: 'Yantramanav', sans-serif
 $ff2: 'Yantramanav', sans-serif
@@ -10,6 +12,7 @@ $background: #fff7ce
 $grey: #3a3a3a
 $lightPink:  #f9eff0
 $break-med: 992px
+$break-small: 320px
 
 $copper: rgba(226, 190, 193, 0.7)
 $copperSolid: rgba(226, 190, 193, 0.9)
@@ -20,7 +23,7 @@ $green: rgba(142, 191, 153, 0.73)
   margin: $marpad
   padding: $marpad
 
-#wpadminbar
+#wpadminbar, .bitnami-corner-image
   display: none !important
 html
   width: 100vw
@@ -43,13 +46,56 @@ h1
   transition: 0.5s ease-in
 .hide
   display: none
+.mobile-nav-bar
+  width: 150px
+  background: #969696
+  border-left: 20px solid #dedcdc
+  border-bottom: 20px solid #dedcdc
+  background-size: cover
+  position: fixed
+  z-index: 10010
+  top: 0
+  right: 0
+  padding: 60px 25px 10px 10px
+  display: none
+  transition: ease-in-out 0.3s
+  margin-top: -600px
+  @media screen and (max-width: $break-med)
+    display: block
+  ul
+    list-style: none
+    text-align: right
+    li
+      a
+        font-size: 1.3em
+        font-weight: 700
+        text-decoration: none
+        color: #dedcdc
+  .small-menu-social
+    text-align: right
+    a
+      color: #dedcdc
+      i
+        font-size: 1.7em
+        margin: 0 2.5px 2.5px
 .nav-bar
   width: 100vw
   height: 3.7em
   background-color: #fff
   position: fixed
-  z-index: 999
+  z-index: 10011
   top: 0
+  .small-bars
+    position: absolute
+    top: 15px
+    right: 0px
+    font-size: 2em
+    color: $grey
+    width: 20%
+    text-align: center
+    display: none
+    @media screen and (max-width: $break-med)
+      display: block
   .slogan
     position: absolute
     right: 2em
@@ -57,22 +103,60 @@ h1
     font-family: $ff2
     font-size: 1.25em
   .menu-nav
-    padding-right: 20px
+    @media screen and (max-width: $break-med)
+      display: none
+    // padding-right: 20px
     ul
       display: inline-flex
       float: right
       list-style-type: none
+      ul
+        display: none
+        position: absolute
+        top: 0px
+        padding: 50px 0 0 0
+        text-align: left
+        &:hover
+          display: block
+        li
+          float: none
+          padding: 10px 0
+          margin: 5px 0
+          border: 0
+          background-color: #969696
+          cursor: pointer
+          &:hover > a
+            color: rgb(111, 111, 111)
+          a
+            padding: 5px 10px
+            font-weight: 500
+            color: white
+      .menu-item-has-children > a::after
+        content: ' ▼'
+        font-size: 0.6em
       li
-        margin: 5px
+        margin: 5px 2.5px 0px
+        border-right: 1px solid
+        padding-right: 5px
+        font-weight: 300
+
+        &:hover > ul
+          display: block
+        &:nth-last-child(1)
+          border-right: 0
         a
           color: black
           text-decoration: none
+
     .menu-social
       float: right
       margin: 1em
-      i
-        margin: 5px
-        font-size: 1.4em
+      a
+        color: $grey
+        i
+          margin: 5px
+          font-size: 1.4em
+
   .menu
     position: relative
     z-index: 99
@@ -80,10 +164,15 @@ h1
       font-family: $ffTitle
       width: 20em
       height: 5em
-      margin-left: 2em
       position: absolute
       top: 0.1em
-      left: 1em
+      left: auto
+      margin-left: auto
+      width: 80%
+      padding-left: 10px
+      max-width: 300px
+      @media screen and (max-width: $break-med)
+        // left: -1em
       p
         position: absolute
         font-family: $ff1
@@ -92,6 +181,12 @@ h1
         left: 22px
         font-size: 12px
         letter-spacing: 1.3px
+        @media screen and (max-width: $break-med)
+          // top: 41px
+          // left: 32px
+          // width: 140%
+          // text-align: left
+          // font-size: 1.4em
       .menu-box-inner
         border-top: none
         width: 100%
@@ -99,22 +194,31 @@ h1
         position: absolute
         bottom: 0
         left: -5px
+        max-width: 300px
       .alice
         font-size: 2em
         position: absolute
         color: $grey
-        left: 2px
+        left: 12px
         text-transform: uppercase
         margin-top: 5px
         letter-spacing: 2px
+        @media screen and (max-width: $break-med)
+          // font-size: 5em
+          // margin-top: 20px
       .benham
         font-size: 2em
         position: absolute
         color: $grey
-        right: 95px
         text-transform: uppercase
         margin-top: 5px
         letter-spacing: 2px
+        left: 102.5px
+        right: auto
+        @media screen and (max-width: $break-med)
+          // font-size: 5em
+          // margin-top: 20px
+          // right: -200px
       .menu-box-opaque
         width: 73%
         height: 60%
@@ -122,6 +226,11 @@ h1
         margin-top: 1.6em
         position: relative
         z-index: -1
+        max-width: 220px
+        @media screen and (max-width: $break-med)
+          // width: 170%
+          // height: 109%
+          // margin-top: 2em
 
 .homepage-body
   width: 100vw
@@ -135,6 +244,8 @@ h1
     z-index: 100
     color: $copper
     -webkit-text-stroke: 2px $copper
+    @media screen and (max-width: $break-med)
+      display: none
   .arrow-left
     left: 0
   .arrow-right
@@ -143,6 +254,14 @@ h1
     width: 100%
     height: 100%
     object-fit: cover
+    @media screen and (max-width: $break-med)
+      display: none
+  .upper-image-small
+    width: 100%
+    height: 100%
+    object-fit: cover
+    @media screen and (min-width: $break-med)
+      display: none
   .background
     width: 100%
     height: 35%
@@ -157,22 +276,95 @@ h1
     z-index: 99
     .home-display-box
       width: 40em
-      height: 12em
-      background-color: $grey
+      height: auto
+      background-color: #969696
+      padding: 20px
+      box-sizing: border-box
       position: absolute
       bottom: 4.5em
       right: 4.5em
+      @media screen and (max-width: $break-med)
+        width: 90%
+        right: 6%
+        bottom: 50px
       .home-content-title
-        font-size: 10em
+        font-size: 4em
         font-family: $ffTitle
         color: white
-        position: absolute
-        left: -0.4em
-        text-align: left
-        top: -0.4em
+        text-align: center
+        position: relative
         text-transform: uppercase
         font-weight: 300
-        letter-spacing: 4.5px
+        width: 100%
+        display: block
+        letter-spacing: 2.5px
+      .home-title1
+        font-size: 2.5em
+        color: #cfcfcf
+        letter-spacing: 10px
+        font-weight: 700
+        @media screen and (max-width: $break-med)
+          font-size: 1.15em
+          margin-bottom: 12px
+          letter-spacing: 5px
+      .home-title2
+        margin-top: -10px
+        color: #faccd0
+        text-transform: capitalize
+        border-bottom: 15px solid
+        letter-spacing: -2px
+        margin-bottom: 20px
+        @media screen and (max-width: $break-med)
+          font-size: 2em
+          width: 100%
+          margin-bottom: 10px
+      .home-content-inner-grey
+        background-color: #fff
+        padding: 20px
+        box-sizing: border-box
+        margin: 10px auto 15px
+        .home-inner-quote
+          font-size: 2.5em
+          font-style: italic
+          width: 100%
+          font-family: $ffTitle
+          display: block
+          @media screen and (max-width: $break-med)
+            font-size: 1.25em
+          .home-quotes
+            font-size: 2em
+            color: #b4636c
+            vertical-align: -23px
+            height: 1px
+            display: inline-block
+            margin-top: -11px
+            @media screen and (max-width: $break-med)
+              vertical-align: -15px
+              margin: auto 2.5px
+        .home-inner-subheading
+          font-size: 1.2em
+          font-weight: 300
+          margin-top: 10px
+          font-family: $ffTitle
+          @media screen and (max-width: $break-med)
+            font-size: 0.8em
+      .home-content-anchor
+        text-decoration: none
+      .home-content-button
+        width: 100px
+        margin: 0 auto
+        background-color: #757575
+        padding: 10px
+        color: white
+        font-weight: 500
+        font-size: 0.8em
+        border-radius: 5px
+        transition: 0.15s ease-in
+        cursor: pointer
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+        text-transform: uppercase
+        &:hover
+          background-color: #cbaeaa
       .home-content-description
         text-align: right
         font-size: 1.8em
@@ -190,6 +382,9 @@ h1
         left: 2em
         background-color: $copper
         z-index: -1
+        @media screen and (max-width: $break-med)
+          top: 1em
+          left: 1em
 .section1
   width: 100vw
   background-color: rgb(249, 239, 240)
@@ -197,7 +392,7 @@ h1
   display: block
   .about-text-div
     width: 100%
-    padding: 10px
+    padding: 10px 0
     text-align: center
     margin: 0 auto
     background-color: white
@@ -208,10 +403,14 @@ h1
       border-bottom: 5px solid $copper
       padding-bottom: 10px
       margin-bottom: 0
+      @media screen and (max-width: $break-med)
+        max-width: 300px
   .section1-inner
     width: 100vw
     background-color: $white
     display: inline-flex
+    @media screen and (max-width: $break-med)
+      flex-wrap: wrap
     .left-image
       height: 30em
       width: 50%
@@ -219,6 +418,8 @@ h1
       background-color: $white
       position: relative
       z-index: 10
+      @media screen and (max-width: $break-med)
+        width: 100%
       img
         margin-top: 2em
         margin-left: 5em
@@ -226,36 +427,68 @@ h1
         height: 100%
         object-fit: cover
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
-        // filter: grayscale(100%)
+        @media screen and (max-width: $break-med)
+          width: 95%
+          margin-left: 0
+          float: right
     .right-text
-      height: 31.5em
       width: 40%
       padding-right: 5%
       background-color: $white
       position: relative
+      padding-bottom: 30px
+      height: auto
+      @media screen and (max-width: $break-med)
+        width: 100%
+        padding-right: 30px
+        height: auto
+      h4
+        text-align: right
+        padding-right: 42.5px
+        margin-bottom: 5px
+        font-family: $ffTitle
+      .button
+        width: 120px
+        float: right
+        margin-right: 40px
+        margin-top: 0
+        position: relative
+        z-index: 999
       .about-logo-row
         margin-top: 50px
-        width: 100%
+        width: calc(100% - 20px)
         text-align: right
         display: inline-block
         padding-right: 20px
+        @media screen and (max-width: $break-med)
+          padding-right: 0
         .alice
           width: 140px
           display: inline-block
-          vertical-align: -30px
-          margin: 0
-          margin-left: -20px
+          vertical-align: -25px
+          margin:  0 -20px 0 20px
+          position: relative
+          z-index: 99
+          @media screen and (max-width: $break-med)
+
         .hello
           width: 140px
           display: inline-block
-          vertical-align: -30px
-          margin: 0
-          margin-right: 10px
+          vertical-align: -25px
+          margin: 0 20px
+          position: relative
+          z-index: 99
+          @media screen and (max-width: $break-med)
+            // width: 240px
         .paragraph-1
-          width: 320px
           font-size: 2.6em
           font-family: $ffTitle
           display: inline-block
+          // padding-right: 17.5px
+          @media screen and (max-width: $break-med)
+            margin-top: 27.5px
+            padding-right: 0
+            width: 250px
       .border
         position: absolute
         top: 60px
@@ -263,6 +496,8 @@ h1
         width: 100%
         height: 100%
         border: 2.5px solid $grey
+        @media screen and (max-width: $break-med)
+          right: 20px
       .paragraph
         position: relative
         text-align: right
@@ -273,15 +508,23 @@ h1
           padding: 2px 5px 2px 7.5px
       .paragraph-2
         font-size: 1.2em
-        padding-left: calc(100% - 320px)
+        padding-left: calc(100% - 290px)
         margin-top: 15px
         float: right
+        @media screen and (max-width: $break-med)
+          padding: 0 10px 0 60px
+          // font-size: 2.8em
+
       .about-subtitle
         text-align: right
         margin: -30px 20px 0
         font-size: 1.5em
         font-weight: 300
         letter-spacing: 1.3px
+        @media screen and (max-width: $break-med)
+          margin: -30px 30px 0
+          // font-size: 3em
+          font-weight: 700
       .initials-img
         width: 49px
         position: absolute
@@ -307,6 +550,8 @@ h1
   background-color: rgb(190, 190, 190)
   padding-bottom: 150px
   padding-top: 80px
+  @media screen and (max-width: $break-med)
+    padding-bottom: 100px
   .section2-content
     width: 80%
     height: 100%
@@ -319,11 +564,15 @@ h1
     flex-flow: row wrap
     align-items: stretch
     .services-text-div
-      width: calc(100% - 50px)
+      width: calc(100% - 20px)
       padding: 10px
       text-align: center
       max-width: 800px
       margin: 0 auto
+      p
+        @media screen and (max-width: $break-med)
+          font-size: 1.2em
+          padding: 15px 15px 0
       h1
         position: relative
         display: inline-block
@@ -331,9 +580,11 @@ h1
         border-bottom: 5px solid $copper
         padding-bottom: 10px
         margin-bottom: 0
+        @media screen and (max-width: $break-med)
+          // font-size: 3.2em
     .circle-outer
-      width: calc(100% - 100px)
-      padding:  10px 50px 50px 50px
+      width: calc(100% - 50px)
+      padding:  10px 25px 50px 25px
       text-align: center
       .circle
         width: 200px
@@ -344,6 +595,9 @@ h1
         position: relative
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
         background-color: $grey
+        @media screen and (max-width: $break-med)
+          width: 150px
+          height: 150px
         a
           color: $grey
           text-decoration: none
@@ -375,11 +629,13 @@ h1
       width: 100%
       height: 100%
       border: 5px solid $white
+      @media screen and (max-width: $break-med)
+        left: 1em
 .section3
   width: 100vw
   display: inline-flex
   position: relative
-  background-image: url("img/banner5.jpg")
+  background-image: url("img/mailinglist.jpg")
   background-size: cover
   .inner-banner
     width: 40%
@@ -391,15 +647,25 @@ h1
     display: inline-block
     margin: 40px 0
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+    @media screen and (max-width: $break-med)
+      width: 70%
+      left: calc(15% - 30px)
     h1
       font-family: $ffTitle
       margin: 0 5px
+      @media screen and (max-width: $break-med)
+        font-size: 1.3em
+        margin-bottom: 10px
     h5
       margin-top: 5px
       margin-bottom: 0px
       font-family: $ff1
       font-size: 1.15em
       font-weight: 300
+      padding: 0 30px
+      @media screen and (max-width: $break-med)
+        padding: 0
+        font-size: 1.1em
     .dash
       display: block
       margin: 0 0 20px
@@ -411,11 +677,16 @@ h1
       font-size: 2em
       font-weight: 300
       margin: 0 5px 5px 5px
+      @media screen and (max-width: $break-med)
+        width: 90%
+        margin: 5px auto
     label
       font-family: $ff2
-      font-size: 2em
+      font-size: 1.5em
       font-weight: 100
       margin-right: 5px
+      @media screen and (max-width: $break-med)
+        font-size: 1.3em
     .submit-button
       display: block
       margin: 0 auto
@@ -458,6 +729,8 @@ h1
   width: 100%
   text-align: center
   padding-top: 40px
+  @media screen and (max-width: $break-med)
+    padding-top: 0
   h1
     font-family: $ffTitle
     color: $grey
@@ -472,23 +745,32 @@ h1
   background-color: white
   display: inline-flex
   padding-bottom: 150px
+  @media screen and (max-width: $break-med)
+    padding-bottom: 50px
   .section4-inner
     width: 100%
     height: 100%
     max-width: 1500px
     margin: 0 auto
     display: inline-flex
+    @media screen and (max-width: $break-med)
+      flex-wrap: wrap
     .blog-post
       width: 33.3333%
       height: 100%
+      @media screen and (max-width: $break-med)
+        width: 100%
       .inner-blog
         background-color: white
         width: 60%
         height: 350px
-        margin-left: 15%
-        margin-top: 10%
+        margin: 5% auto
         position: relative
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+        @media screen and (max-width: $break-med)
+          width: 70%
+          height: 300px
+          margin: 10px 15% 70px calc(15% - 12.5px)
         img
           position: absolute
           top: 0
@@ -503,6 +785,9 @@ h1
           z-index: 99
           top: 10px
           right: 10px
+          @media screen and (max-width: $break-med)
+            width: auto
+            max-width: 200px
           h3
             text-align: right
             margin: 10px 10px 0px
@@ -511,6 +796,9 @@ h1
             display: block
             width: calc(100% - 20px)
             color: $grey
+            @media screen and (max-width: $break-med)
+              // font-size: 2.8em
+              width: 100%
           h6
             margin: 0 10px 10px
             float: right
@@ -518,6 +806,8 @@ h1
             font-family: $ff2
             display: block
             width: calc(100% - 20px)
+            @media screen and (max-width: $break-med)
+              // font-size: 1.8em
           i
             display: block
             width: 100%
@@ -554,17 +844,26 @@ h1
   padding-top: 30px
   h1
     margin: 0
+    @media screen and (max-width: $break-med)
+      // font-size: 3.2em
 .section6
   width: calc(100vw - 200px)
   background-color: $lightPink
   padding: 10px 100px 50px
   display: inline-flex
+  @media screen and (max-width: $break-med)
+    flex-wrap: wrap
+    padding: 10px 10px 50px
+    width: calc(100vw - 20px)
   .testimonial
     width: calc(33.333% - 50px)
-    height: 200px
+    padding-bottom: 65px
     margin: 25px
     background-color: white
     position: relative
+    @media screen and (max-width: $break-med)
+      width: calc(100% - 50px)
+      height: auto
     .icon-outer
       width: 90%
       display: block
@@ -572,34 +871,50 @@ h1
       height: 51px
       border-bottom: solid $copper 2px
       margin-bottom: 10px
+      @media screen and (max-width: $break-med)
+        height: 55px
     i
       float: right
       display: block
       font-size: 2em
       color: $copper
       margin: 10px 15px
+      @media screen and (max-width: $break-med)
+        // font-size: 2.8em
+        margin: 16px 1px
     .testimonial-text
       margin: 0
       padding: 0 30px
       font-size: 18px
+      @media screen and (max-width: $break-med)
+        // font-size: 2.8em
+        padding:  20px 40px 70px
     .testimonial-name
       position: absolute
       bottom: 0px
       right: 20px
       font-family: $ffTitle
       font-style: italic
+      @media screen and (max-width: $break-med)
+        // font-size: 1.5em
     img
       height: 30px
       position: absolute
       top: 14px
       left: 20px
       opacity: 0.8
+      @media screen and (max-width: $break-med)
+        top: 17.5px
+        max-height: 40px
+        max-width: 130px
 .footer
   width: 100vw
   text-align: center
   padding: 70px 0
   border-top: 10px solid $copper
   border-bottom: 10px solid $copper
+  .footer-menu
+    margin-bottom: 20px
   h1
     font-family: $ffTitle
     font-weight: 100
@@ -607,9 +922,13 @@ h1
     display: inline-block
     padding: 0 10px 5px
     margin: 0
+    @media screen and (max-width: $break-med)
+      // font-size: 3.2em
   h4
     margin: 10px 0 0 0
     font-weight: 300
+    @media screen and (max-width: $break-med)
+      // font-size: 2.4em
 
   ul
     list-style: none
@@ -618,22 +937,36 @@ h1
       display: inline-block
       margin: 0px 30px
       font-family: $ff2
+      @media screen and (max-width: $break-med)
+        // font-size: 2.8em
       a
         color: black
         text-decoration: none
   .footer-social
-    i
-      font-size: 2em
-      color: $copper
-      margin: 5px 20px 20px
+    a
+      color: $grey
+      i
+        font-size: 2em
+        color: $copper
+        margin: 5px 20px 20px
   .copyright
     h5
       font-weight: 100
       margin: 10px 0 0 0
+      @media screen and (max-width: $break-med)
+        // font-size: 2.1em
+        font-weight: 700
   .credit
+    a
+      color: $grey
+      text-decoration: none
+      cursor: pointer
     h3
       margin: 0
       font-weight: 100
+      @media screen and (max-width: $break-med)
+        // font-size: 2.1em
+        font-weight: 700
     span
       font-size: 0.7em
 // Services Page
@@ -642,29 +975,47 @@ h1
   margin-top: 60px
   .services-intro
     text-align: center
+    @media screen and (max-width: $break-med)
+      padding-top: 30px
     .services-writing
-      width: 250px
-    .services-alice
-      border-bottom: 5px solid $copper
-      padding-bottom: 10px
-      margin-bottom: 20px
+      width: 180px
+      display: inline-block
+      margin-bottom: 30px
+      @media screen and (max-width: $break-med)
+        width: 100px
+    h1
+      display: inline-block
+      vertical-align: 59px
+      margin: 0 15px
+      @media screen and (max-width: $break-med)
+        vertical-align: 45px
+    // .services-alice
+    //   padding-bottom: 10px
+    //   margin-bottom: 20px
     h3
       font-size: 20px
       max-width: 500px
       margin: 0 auto 50px
       text-align: center
       letter-spacing: 2.5px
+      @media screen and (max-width: $break-med)
+        padding: 0 30px
+        margin: 0 auto 0px
   .services-content
     max-width: 1200px
     margin: 0 auto 100px
     display: flex
     flex-wrap: wrap
+    @media screen and (max-width: $break-med)
+      margin: 0 auto 50px
     h4
       width: 100%
       font-size: 2em
       font-family: $ffTitle
       font-weight: 300
       margin-bottom: 20px
+      @media screen and (max-width: $break-med)
+        margin-top: 20px
     .services-block
       width: 33.3333%
       background-color: #ebebeb
@@ -673,12 +1024,15 @@ h1
         display: inline-block
         padding-bottom: 3px
         margin: 30px auto
+        @media screen and (max-width: $break-med)
+          font-size: 1em
+          margin: 15px
       button
   .services-cta-background
     width: 100vw
     padding: 25px 0
     margin-left: 30px 0
-    background-image: url('img/banner5.jpg')
+    background-image: url('img/greybackgroundtest.jpg')
     background-size: cover
     .services-cta
       width: 100%
@@ -695,6 +1049,9 @@ h1
         justify-content: center
         align-items: center
         flex-wrap: wrap
+        a
+          text-decoration: none
+          color: $white
         button
           background-color: $grey
           color: white
@@ -705,9 +1062,14 @@ h1
           margin-top: 10px
           border-bottom: 2.5px solid $grey
           padding-bottom: 2.5px
+          display: inline-block
         h3
           margin: 0 auto 20px
           padding: 10px
+          color: $grey
+          @media screen and (max-width: $break-med)
+            padding: 0
+            font-size: 1em
         span
           font-size: 1.5em
           font-family: $ffTitle
@@ -727,6 +1089,9 @@ h1
           margin: 0 auto 20px
           color: white
           padding: 10px
+          @media screen and (max-width: $break-med)
+            padding: 0
+            font-size: 0.9em
         h2
           color: white
           font-family: $ffTitle
@@ -734,12 +1099,408 @@ h1
           margin-top: 10px
           border-bottom: 2.5px solid $copper
           padding-bottom: 2.5px
+  // Free Content
+.free-content
+  display: flex
+  flex-wrap: wrap
+  max-width: 1300px
+  padding: 60px 0
+  margin: 10px auto 0px
+  p
+    font-size: 1.4em
+    padding: 0 5%
+    margin: 0 0 35px
+  .main-content-title
+    width: 100%
+    margin: 0
+    font-size: 5em
+    font-weight: 300
+    color: #d79ea4
+    font-family: $ffTitle
+    @media screen and (max-width: $break-med)
+      font-size: 3em
+  .content-title
+    font-family: $ffTitle
+    font-weight: 300
+    font-size: 5em
+    color: $grey
+    width: 100%
+    margin: 0px auto 0
+    @media screen and (max-width: $break-med)
+      font-size: 3.5em
+  .free-content-div
+    width: calc(33.333% - 30px)
+    margin: 15px
+    background-color: $copper
+    height: 250px
+    overflow: hidden
+    position: relative
+    @media screen and (max-width: $break-med)
+      width: calc(100% - 30px)
+    h2
+      font-family: $ffTitle
+      font-weight: 300
+      background-color: white
+      color: $grey
+      position: absolute
+      text-align: left
+      margin: 0
+      max-width: 70%
+      top: 15px
+      left: 15px
+      padding: 5px 10px 7.5px
+    img
+      height: auto
+      width: 100%
+      height: 100%
+      object-fit: cover
+  .free-download-link
+    background-color: $grey
+    color: white
+    position: absolute
+    bottom: 15px
+    right: 15px
+    padding: 5px 5px 5px 10px
+    font-weight: 700
+    border-radius: 5px
+    transition: 0.1s ease-in
+    user-select: none
+    &:hover
+      background-color: black
+      transform: scale(1.05)
+    i
+      margin: 0 5px
+      vertical-align: -1px
+  .more-episodes-link
+    margin: 30px auto 0
+    text-decoration: none
+  .more-episodes
+    position: relative
+    margin: 0 auto
+    background-color: #d79ea4
+    padding: 10px
+    display: inline-block
+
+//Courses Page
+#courses
+  margin-top: 60px
+  .courses-dot
+    vertical-align: 2px
+    font-size: 0.5em
+    color: #d6707b
+  .courses-img
+    width: 100%
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+    opacity: 0.3
+  .courses-quotes
+    font-family: $ffTitle
+    font-size: 2em
+    color: #b4636c
+    vertical-align: -18px
+    height: 1px
+    display: inline-block
+    margin-top: -11px
+    @media screen and (max-width: $break-med)
+      vertical-align: -13px
+  .courses-sub-tagline
+    margin-bottom: 40px
+    @media screen and (max-width: $break-med)
+      padding: 0 30px
+      margin-bottom: 20px
+    span
+      font-weight: 500
+      font-size: 1.5em
+      @media screen and (max-width: $break-med)
+        font-size: 0.8em
+  .courses-intro-title
+    font-size: 3.5em
+    font-family: $ffTitle
+    margin: 30px auto 0px
+    border-bottom: 2px solid rgb(101, 101, 101)
+    display: inline-block
+    color: rgb(101, 101, 101)
+    @media screen and (max-width: $break-med)
+      font-size: 2.5em
+  .courses-intro-title-2
+    font-size: 4.5em
+    margin: 0 auto 5px
+    font-family: $ffTitle
+    color: #d79ea4
+    @media screen and (max-width: $break-med)
+      font-size: 1.8em
+      padding: 0 30px
+  .courses-quote-div
+    @media screen and (max-width: $break-med)
+      max-width: 80%
+      margin: 0 auto
+    .courses-quote-div-span
+      font-size: 2em
+      padding: 10px
+      background-color: rgb(204, 204, 204)
+      display: inline-block
+      margin: 15px auto 5px
+      font-family: $ffTitle
+      @media screen and (max-width: $break-med)
+        font-size: 1.2em
+  .courses-book-consultation-div
+    @media screen and (max-width: $break-med)
+      width: 80%
+      margin: 0 auto
+    .courses-book-button
+      padding: 10px 25%
+      margin: 30px auto 45px
+      display: none
+      background-color: rgb(130, 130, 130)
+      color: white
+      font-size: 1.5em
+      font-weight: 500
+      border-radius: 10px
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+      @media screen and (max-width: $break-med)
+        font-size: 1em
+        padding: 10px 10%
+        margin: 15px auto
+  .courses-content
+    width: 90%
+    padding-left: 15px
+    margin: 0 auto
+    display: flex
+    flex-wrap: wrap
+    @media screen and (max-width: $break-med)
+      width: 96%
+      padding: 0
+    .courses-box
+      min-height: 350px
+      position: relative
+      .courses-box-tag
+        position: absolute
+        top: 0
+        left: 0
+        margin: 2.5px 10px
+        font-size: 3em
+        font-weight: 100
+        z-index: 99
+        font-family: $ffTitle
+      .courses-box-inner
+        width: calc(100% - 30px)
+        padding: 30px
+        box-sizing: border-box
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+        position: relative
+        bottom: 0
+        margin-right: 0
+        background-color: #cccccc
+        @media screen and (max-width: $break-med)
+          width: calc(100% - 60px)
+          padding: 40px 20px 60px
+
+      .courses-box-1-inner
+        margin-left: 30px
+        margin-top: 30px
+        text-align: left
+        .courses-box-1-points
+          font-size: 1.1em
+          text-align: left
+          margin: 7.5px auto
+          box-sizing: border-box
+          padding: 5px 10px
+          background-color: #d6d6d6
+        p
+          font-weight: 300
+          text-align: left
+          width: 100%
+
+      .courses-box-2-inner
+        margin: 30px auto 15px 30px
+        width: calc(100% - 60px)
+        text-align: left
+        justify-content: left
+        box-sizing: border-box
+        @media screen and (max-width: $break-med)
+        .box-2-subheading
+          color: #ce717b
+          text-align: center
+          font-weight: 500
+        p
+          font-weight: 300
+          font-size: 1em
+          margin: 5px
+        .courses-chapters
+          width: 100%
+          display: flex
+          flex-wrap: wrap
+          p
+            width: calc(50% - 10px)
+            font-size: 1.1em
+            text-align: left
+            margin: 5px auto
+            box-sizing: border-box
+            padding: 5px 10px
+            background-color: #d6d6d6
+          .long-course
+            width: calc(100% - 10px)
+      .courses-box-2-quote
+        position: relative
+        width: calc(100% - 60px)
+        left: 30px
+        font-size: 1.5em
+        font-family: $ffTitle
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+        background-color: rgb(241, 241, 241)
+        border-radius: 10px
+        padding: 10px
+        height: 20%
+        margin-bottom: 30px
+        box-sizing: border-box
+        display: flex
+        justify-content: center
+        align-items: center
+        @media screen and (max-width: $break-med)
+          height: 80px
+        a
+          color: black
+          text-decoration: none
+          @media screen and (max-width: $break-med)
+            font-size: 0.8em
+    .courses-box-1-div
+      width: 40%
+      @media screen and (max-width: $break-med)
+        width: 100%
+    .courses-box-2-div
+      width: 60%
+      @media screen and (max-width: $break-med)
+        width: 100%
+    .courses-content-divider
+      background-color: rgba(215, 158, 164, 0.46)
+      width: 90%
+      margin: 30px auto
+      @media screen and (max-width: $break-med)
+        margin: 30px auto 10px
+      span
+        font-size: 3em
+        font-family: $ffTitle
+        font-weight: 100
+        color: $grey
+        @media screen and (max-width: $break-med)
+          font-size: 2em
+    .courses-content-row-2
+      width: 90%
+      margin: 0 auto
+      display: flex
+      flex-wrap: wrap
+      .courses-prices-tag
+        margin: 0 0px
+        font-size: 3em
+        font-weight: 700
+        font-family: $ffTitle
+        display: block
+        @media screen and (max-width: $break-med)
+          display: none
+      .courses-prices
+        font-weight: 100
+        color: rgb(119, 119, 119)
+      .courses-row-block
+        min-height: 100px
+        @media screen and (max-width: $break-med)
+          min-height: 0px
+      .courses-row-2-block-1
+        width: 25%
+        text-align: left
+      .courses-row-2-block-2
+        width: 50%
+        @media screen and (max-width: $break-med)
+          width: 100%
+        p
+          font-size: 1.3em
+          margin: 0px auto 15px
+          font-weight: 500
+          padding: 0 50px
+          font-family: $ffTitle
+          @media screen and (max-width: $break-med)
+            font-size: 1em
+            margin: 0 auto
+            padding: 0
+      .courses-row-2-block-3
+        width: 25%
+        text-align: right
+    .courses-content-row-3
+      width: calc(90% + 30px)
+      margin: 0 auto
+      display: flex
+      flex-wrap: wrap
+      text-align: left
+      font-size: 1.25em
+      font-weight: 300
+      .courses-row-3-box
+        width: calc(50% - 30px)
+        margin: 15px
+        background-color: #cccccc
+        min-height: 300px
+        padding: 30px
+        box-sizing: border-box
+        p
+          text-align: left
+          margin: 5px auto
+          box-sizing: border-box
+          padding: 5px 10px
+          background-color: #d6d6d6
+          margin: 10px auto
+        @media screen and (max-width: $break-med)
+          width: calc(100% - 30px)
+        .row-3-tag
+          font-family: $ffTitle
+          font-size: 2em
+          display: none
+          @media screen and (max-width: $break-med)
+            display: block
+          .row-3-tag-prices
+            color: rgb(119, 119, 119)
+    .courses-content-row-4
+      width: 85%
+      text-align: center
+      margin: 15px auto
+      padding: 15px
+      box-sizing: border-box
+      position: relative
+      overflow: hidden
+      .courses-contact-subheading
+        max-width: 400px
+        margin: 10px auto
+        font-weight: 500
+        font-family: $ffTitle
+        font-size: 1.1em
+      .courses-contact-button
+        cursor: pointer
+        font-family: $ffTitle
+        width: 150px
+        margin: 15px auto
+        padding: 10px 30px
+        border-radius: 10px
+        font-weight: 500
+        color: $grey
+        font-size: 1.2em
+        box-sizing: border-box
+        background-color: $copper
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+
+
+
+
+
   // About page
 #blocks
   display: flex
   flex-wrap: wrap
   width: 100vw
   min-height: 100vh
+  @media screen and (max-width: $break-med)
+    min-height: 50vh
 #about-page
   display: flex
   width: 100vw
@@ -749,6 +1510,7 @@ h1
     height: 50vw
     @media screen and (max-width: $break-med)
       width: 100%
+      height: 80vw
     img
       width: 100%
       height: 100%
@@ -761,13 +1523,15 @@ h1
     flex-wrap: wrap
     align-items: center
     justify-content: center
+    @media screen and (max-width: $break-med)
+      display: none
     .about-content-inner
-      width: 300px
+      width: 100%
+      h1
+        vertical-align: 37.5px
+        margin: 0 15px
       .about-writing
-        width: 250px
-      .about-alice
-        border-bottom: 10px solid $copper
-        padding-bottom: 15px
+        width: 240px
       @media screen and (max-width: $break-med)
         width: 100%
         margin: auto
@@ -783,28 +1547,74 @@ h1
     justify-content: center
     position: relative
     animation-duration: 0.5s
+    @media screen and (max-width: $break-med)
+      width: calc(50vw - 10px)
+      height: calc(50vw - 10px)
     &:nth-child(even)
       animation-delay: 0.2s
       animation-duration: 0.4s
-    .about-block-list
-      h3
-        font-size: 1.8vw
-        margin-bottom: 10px
-        padding-bottom: 5px
-        width: 100%
-        font-family: $ffTitle
-        border-bottom: 3px solid $grey
-      ul
-        columns: 2
-        padding: 0
-        margin-top: 20px
-        margin-left: -10px
-        li
-          list-style: decimal inside
-          font-size: 1.5em
-          margin: 20px
-          &:nth-child(1)
-            margin: 0 20px 20px 20px
+    .about-blog
+      h1
+        margin-top: 0px
+        @media screen and (max-width: $break-med)
+          font-size: 1.3em
+          margin-top: 5px
+          margin-bottom: 5px
+      h2
+        @media screen and (max-width: $break-med)
+          font-size: 0.8em
+          margin-bottom: 10px
+      .about-blog-image-div
+        width: 16.666666vw
+        height: 16.666666vw
+        margin: 0 auto
+        position: relative
+        button
+          position: absolute
+          top: calc(8.3333vw - 30px)
+          left: calc(8.3333vw - 50px)
+          font-size: 2.3em
+          height: 60px
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+          @media screen and (max-width: $break-med)
+            display: none
+    // .about-block-list
+    //   @media screen and (max-width: $break-med)
+    //     width: 100%
+    //     padding: 10px
+    //   h3
+    //     font-size: 1.8vw
+    //     margin-bottom: 10px
+    //     padding-bottom: 5px
+    //     width: 100%
+    //     font-family: $ffTitle
+    //     @media screen and (max-width: $break-med)
+    //       margin-top: 10px
+    //       font-size: 0.7em
+    //   ul
+    //     columns: 2
+    //     padding: 0
+    //     margin-top: 20px
+    //     margin-left: -10px
+    //     @media screen and (max-width: $break-med)
+    //       columns: 3
+    //       margin: 2.5px auto
+    //       max-width: 250px
+    //     li
+    //       list-style: decimal inside
+    //       font-size: 1.5em
+    //       margin: 20px
+    //       @media screen and (max-width: $break-med)
+    //         margin: 5px
+    //         font-size: 4vw
+    //         font-weight: 700
+    //       &:nth-child(1)
+    //         margin: 0 20px 20px 20px
+    //         @media screen and (max-width: $break-med)
+    //           margin: 0 5px 5px 5px
     #about-block-signup-div
       h2
         font-family: $ffTitle
@@ -813,10 +1623,15 @@ h1
         padding-bottom: 5px
         display: inline-block
         margin-bottom: 0
+        @media screen and (max-width: $break-med)
+          font-size: 1.1em
+          margin-top: 30px
       p
         font-weight: 700
         font-size: 1.3em
         width: 300px
+        @media screen and (max-width: $break-med)
+          font-size: 1em
       button
         display: block
         margin: 0 auto
@@ -828,6 +1643,8 @@ h1
         font-family: $ffTitle
         font-size: 1em
         transition: 0.1s ease-in
+        @media screen and (max-width: $break-med)
+          margin-bottom: 25px
         &:hover
           box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
         &:focus
@@ -872,6 +1689,8 @@ h1
         font-weight: 700
         margin: 0
         font-size: 3em
+        @media screen and (max-width: $break-med)
+          font-size: 1.3em
       .about-icon
         width: 50%
         opacity: 0.7
@@ -883,11 +1702,27 @@ h1
       margin-top: 30px
       border-bottom: 2.5px solid
       padding-bottom: 5px
+      @media screen and (max-width: $break-med)
+        font-size: 1.8em
+        margin: 30px 10px 15px
     .about-block-text
       padding: 0 10% 10%
       margin: -50px 0 0 0
       font-size: 1.25vw
       font-weight: 700
+      @media screen and (max-width: $break-med)
+        font-size: 0.75em
+        margin: 0
+        padding: 0 10% 50px
+  .largeBlock
+    @media screen and (max-width: $break-med)
+      width: calc(100vw - 10px)
+      height: auto
+      justify-content: center
+      align-items: center
+  .hideBlock
+    @media screen and (max-width: $break-med)
+      display: none
   .ab2
     background-color: #ebebeb
   .ab3
@@ -988,12 +1823,16 @@ h1
     max-width: 1200px
     margin: 0 auto
     padding-top: 30px
+    overflow-x: hidden
     @media screen and (max-width: $break-med)
       width: 100%
     .post-outer
       width: 370px
       margin: 30px calc(25% - 185px)
       background-color: white
+      @media screen and (max-width: $break-med)
+        width: 100%
+        margin: 35px
       li
         list-style: none
         background-color: white
@@ -1009,8 +1848,8 @@ h1
           font-family: $ffTitle
           text-decoration: none
           font-size: 1.5em
-          border-bottom: 2px solid $grey
-          padding-bottom: 2.5px
+          border-bottom: 1px solid $grey
+          padding-bottom: 3px
           line-height: 40px
       .blog-image
         width: 100%
@@ -1043,6 +1882,10 @@ h1
       text-align: left
       position: relative
       z-index: 99
+      @media screen and (max-width: $break-med)
+        margin: -20px -10px auto auto
+        max-width: 68vw
+        overflow: hidden
     .blog-link-div
       text-align: right
       margin-top: 5px
@@ -1053,26 +1896,107 @@ h1
         margin-right: 5px
     .post-divide
       text-align: center
+// Contact Form
+
+#contact-form-section
+  margin-top: 50px
+  .contact-from-consult-div
+    display: inline-block
+    padding: 0 30px
+    margin: 0 auto 15px
+    border-radius: 10px
+    max-width: 800px
+    .contact-button
+      padding: 10px
+      margin: 0px auto 35px
+      background-color: rgb(130, 130, 130)
+      color: white
+      text-decoration: none
+      font-size: 1.2em
+      display: block
+      width: 40%
+      font-weight: 500
+      border-radius: 10px
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+      -webkit-appearance: none
+      @media screen and (max-width: $break-med)
+        font-size: 1em
+        padding: 10px 10%
+        margin: 15px auto
+  .contact-subheading
+    font-size: 1.2em
+  p
+    max-width: 400px
+    margin: 15px auto
+    font-size: 1.5em
+    font-weight: 300
+  h1
+    font-family: $ffTitle
+    margin-bottom: 25px
+    border-bottom: 2.5px solid $copper
+    display: inline-block
+    padding: 5px
+  h2
+    font-family: $ffTitle
+    border-bottom: 2px solid
+    display: inline-block
+    padding-left: 5px
+    padding-right: 5px
+    margin-bottom: 0
+  h3
+    font-family: $ffTitle
+    font-weight: 300
+    margin-top: 50px
+  img
+    width: 100px
+    margin-bottom: 50px
+  input
+    border: 2px solid $grey
+    border-radius: 2px
+    margin: 10px
+    padding: 5px
+    max-width: 80%
+    margin: 0 auto
+  textarea
+    resize: none
+    border: 2px solid $grey
+    margin: 20px
+    border-radius: 2px
+    padding: 5px
+    max-width: 80%
+    margin: 0 auto
+  input,textarea
+    &:focus
+      outline: 0
+  .wpcf7-submit
+    margin: 0
+    width: 100px
+    padding: 10px
+    background-color: $copper
 
 // Single post
 .top-banner
   background-color: rgb(231, 175, 156)
   width: 100%
-  height: 140px
+  height: 100px
   display: block
   background-image: url('img/sky1.jpg')
   background-size: cover
   position: relative
   filter: grayscale(40%)
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-top: 3.7em
   h1
     position: absolute
-    margin-left: -200px
-    bottom: 20px
-    width: 400px
     font-family: $ffTitle
     color: $grey
-    border-bottom: 2px solid
+    width: 100%
+    padding: 2.5px
     display: inline-block
+    margin: 0 auto
+    font-size: 1.6em
 .content-area
   width: 100vw
   display: inline-flex
@@ -1120,10 +2044,13 @@ h1
       width: 80%
       margin: 0 auto
       background-color: #fff
-      font-weight: 700
       @media screen and (max-width: $break-med)
         width: 80%
         font-size: 18px
+        img
+          max-width: 80%
+          margin: 0 auto
+          height: auto
 // Comments
 
 #comments
@@ -1238,14 +2165,17 @@ h1
 
 #popup
   display: none
-  width: 40%
-  left: 30%
-  top: 10vh
+  width: calc(50% - 50px)
+  left: 25%
+  top: 20vh
   position: fixed
   background-image: url('img/sky1-o.png')
   background-size: cover
   border: 25px solid $copper
   z-index: 1000
+  @media screen and (max-width: $break-med)
+    width: calc(70% - 50px)
+    left: 15%
   .inner-banner
     width: 100%
     padding: 50px
@@ -1254,15 +2184,27 @@ h1
     position: relative
     margin: 40px 0
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)
+    @media screen and (max-width: $break-med)
+      padding: 10px 50px
+      margin: 10px 0
     h1
       font-family: $ffTitle
       margin: 0 5px
+      @media screen and (max-width: $break-med)
+        font-size: 1.2em
     h5
       margin-top: 5px
       margin-bottom: 0px
       font-family: $ff1
       font-size: 1.15em
       font-weight: 300
+      @media screen and (max-width: $break-med)
+        font-size: 0.8em
+    h6
+      font-size: 0.8em
+      margin: 0
+      @media screen and (max-width: $break-med)
+        // font-size: 1.5em
     .dash
       display: block
       margin: 0 0 20px
@@ -1274,12 +2216,18 @@ h1
       font-size: 1.4em
       font-weight: 300
       margin: 0 5px 5px 5px
+      @media screen and (max-width: $break-med)
+        font-size: 1em
+        width: 90%
+        height: 25px
     label
       font-family: $ff2
       font-size: 1.2em
       font-weight: 100
       margin-right: 5px
       vertical-align: 3px
+      @media screen and (max-width: $break-med)
+        font-size: 0.8em
     .submit-button
       display: block
       margin: 0 auto
@@ -1294,6 +2242,10 @@ h1
       font-family: $ff1
       font-size: 1em
       transition: 0.1s ease-in
+      @media screen and (max-width: $break-med)
+        // font-size: 2.2em
+        width: 100px
+        height: 30px
       &:hover
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
       &:focus
@@ -1303,6 +2255,8 @@ h1
       position: absolute
       top: 5px
       right: 10px
+      @media screen and (max-width: $break-med)
+        font-size: 2.2em
 .button
   display: block
   margin: 0 auto
@@ -1319,3 +2273,14 @@ h1
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
   &:focus
     outline: 0
+#lineDrawing
+  width: 100px
+  margin: 0 auto
+  position: absolute
+  left: 30px
+  bottom: 70px
+  animation-delay: 0.5s
+  .st0
+    fill: white
+  .st1
+    fill: white
